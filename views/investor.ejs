@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INVESTOR</title>
+</head>
+
+      <body>
+        <div class="container">
+
+    <form action="/investor">
+      
+
+        <div class="row">
+            <div class="input-field col s6">
+              <input id="first_name2" name="companyName" type="text" required>
+              <label for="companyName">Company Name</label>
+            </div>
+          </div>
+                
+
+          <div class="row">
+            <div class="input-field col s6">
+              <input  name="totalShare" type="text"required/>
+              <label for="totalShare">Total Share</label>
+            </div>
+          </div> 
+
+          <div class="row">
+            <div class="input-field col s6">
+              <input  name="forPublic" type="text"required/>
+              <label for="forPublic">For Public</label>
+            </div>
+          </div> 
+
+        <div class="row">
+            <div class="input-field col s6">
+              <input  name="price" type="text"required/>
+              <label for="price">Price</label>
+            </div>
+          </div> 
+
+       
+          <div class="row">
+            <div class="input-field col s6">
+              <input  name="openingDate" type="text"required/>
+              <label for="openingDate">Opening Date</label>
+            </div>
+          </div> 
+
+  
+  
+        <Button class="waves-effect waves-light btn"><i class="material-icons right">arrow_forward</i>Post</Button>
+      </form>
+      
+     </div>
+      
+      <script>
+         const form = document.querySelector('form');
+         form.addEventListener('submit',async (e)=>{
+             e.preventDefault();
+             const companyName = form.companyName.value;
+             const totalShare = form.totalShare.value;
+             const forPublic = form.forPublic.value;
+             const price = form.price.value;
+             const openingDate = form.openingDate.value;
+
+             try{
+                    const res = await fetch('/investor',{
+                        method : 'POST',
+                        body: JSON.stringify({companyName,totalShare,forPublic,price,openingDate}),
+                        headers: {'Content-Type': 'application/json'}
+                    });
+                    const data = await res.json();
+                    console.log(data);
+             }catch(err)
+             {
+                 console.log(err);
+             }
+         });
+      </script>
+      </body>
+      </html>

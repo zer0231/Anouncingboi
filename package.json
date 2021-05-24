@@ -1,0 +1,35 @@
+{
+  "name": "announcingboi",
+  "version": "1.0.0",
+  "description": "a simple announcing bot",
+  "main": "index.js",
+  "dependencies": {
+    "discord-fetch-all": "^3.0.2",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "discord.js": "^12.3.0",
+    "fb": "^2.0.0",
+    "textrazor": "^2.1.0"
+  },
+  "devDependencies": {
+    "@discordjs/uws": "^10.149.0",
+    "discord.js": "^11.6.4",
+    "got": "^11.3.0",
+    "tape": "^4.7.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zer0231/AnnouncingBoi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zer0231/AnnouncingBoi/issues"
+  },
+  "homepage": "https://github.com/zer0231/AnnouncingBoi#readme"
+}
