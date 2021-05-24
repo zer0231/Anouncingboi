@@ -5,6 +5,7 @@ const router = Router();
 
 //for showing to user
 router.get('/investor', authController.investor_get);
+router.get('/investor', authController.investor_get);
 
 //for fetching from webpage
 router.post('/investor', authController.investor_post);

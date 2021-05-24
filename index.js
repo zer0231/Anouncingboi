@@ -44,12 +44,12 @@ bot.on('message',msg=>{
 
       case 'say':
       message_announcement = msg.content.slice(prefex_length+4,msg_length);
-      msg.channel.send(message_announcement).then(msg =>{msg.delete({timeout: 1000})}).catch((err)=>{console.log(err)});
+      msg.channel.send(message_announcement).then(msgResponse =>{msg.delete({timeout: 1000})}).catch((err)=>{console.log(err)});
       break;
 
       case 'shout':
       message_announcement = msg.content.slice(prefex_length+6,msg_length);
-      msg.channel.send("@everyone "+message_announcement).then(msg =>{msg.delete({timeout: 1000})}).catch((err)=>{console.log(err)});
+      msg.channel.send("@everyone"+message_announcement).then(msgResponse =>{msg.delete({timeout: 1000})}).catch((err)=>{console.log(err)});
       // msg.delete(1000); //Supposed to delete message
       break;
 
