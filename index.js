@@ -1,13 +1,10 @@
 require('dotenv').config();
 const path = require('path');
 const prefex = "boss";
-const access_token = 'EAADT31ZBVGU8BAAxS8bvP3n1ZB4V4E0ZBuJGew8Fr6SXpQPRlSFzIwZCng9WBE9D1OHQtf3t9v6BsbkbtB4dD9cSOuHE2NdWcHuueapxWWxZCcdfd5gKC5DnByJEwPb9kHD3nWfZAJu55HslBxaNVkOmVHcnBbdHA4FztHigjpOJlQEWoGmVax8zuoVP3ajH0kCAFhvdySPWa40keuqYiqOYRSKRDUDIWwDyDJuDidFXdfGabMF1YsSxW3dCOinUUZD';
-const Discord = require('discord.js');
 const bot = require('./Bot/bot');
 const express = require('express');
 const port = process.env.PORT;
 const fs = require('fs');
-const { url } = require('inspector');
 const request = require('request');
 const app = express();
 const authRoutes = require('./routes/authRoutes');
@@ -21,6 +18,7 @@ app.listen(process.env.PORT || port,function(){
 
 
 bot.on('ready',()=>{
+ 
 //starting the bot
 console.info(`Logged in as ${bot.user.tag}!`);
 
@@ -211,7 +209,6 @@ app.use(express.static('public'));
 app.use(express.json());
 
 // routes
-app.get('/', (req, res) => res.render('home'));
 app.use(authRoutes);
 
 app.get('/wallpaper.json', function(req, res){
