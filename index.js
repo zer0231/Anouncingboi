@@ -9,6 +9,7 @@ const request = require('request');
 const app = express();
 const authRoutes = require('./routes/authRoutes');
 
+
 // view engine
 app.set('view engine', 'ejs');
 
